@@ -128,6 +128,23 @@ namespace JustAutoPartsProject.Controllers
             }
             return RedirectToAction("Login", "Account");
         }
+        [HttpGet]
+        public ActionResult Tyre()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                if (Session["Role"] == null)
+                {
+                    if (DB.Parts.Count() > 0)
+                    {
+                        var query = (from x in DB.Parts where x.Category == "Tyre" select x);
+                        return View(query);
+                    }
+                }
+                return new HttpNotFoundResult("Not Allowed");
+            }
+            return RedirectToAction("Login", "Account");
+        }
 
     }
 }

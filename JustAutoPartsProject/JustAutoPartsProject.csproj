@@ -231,6 +231,7 @@
     <Content Include="database\rear-lights.png" />
     <Content Include="database\sports-air-filter.png" />
     <Content Include="database\tailpipe.png" />
+    <Content Include="database\tyre.png" />
     <Content Include="database\wing-mirror.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -248,6 +249,7 @@
     <Content Include="images\order.png" />
     <Content Include="images\search.png" />
     <Content Include="images\shopping-cart.png" />
+    <Content Include="images\tyres.png" />
     <Content Include="images\user.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -301,6 +303,7 @@
     <Content Include="Views\Account\checkBalance.cshtml" />
     <Content Include="Views\Order\addToCart.cshtml" />
     <Content Include="Views\Order\PlaceOrder.cshtml" />
+    <Content Include="Views\Home\Tyre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

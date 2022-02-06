@@ -111,6 +111,20 @@ namespace JustAutoPartsProject.Controllers
             }
             return RedirectToAction("Login", "Account");
         }
+        public ActionResult Index()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                if (Session["Role"] != null)
+                {
+                    var user = DB.Users.SingleOrDefault(x => x.Role.Equals("Admin"));
+                    return View(user);
+                }
+                return new HttpNotFoundResult("Not Allowed");
+            }
+            return RedirectToAction("Login", "Account");
+        }
+      
         public ActionResult viewUsers()
         {
             if (User.Identity.IsAuthenticated)
