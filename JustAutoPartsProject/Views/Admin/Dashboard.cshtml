@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2 style="margin-top:80px;margin-bottom:40px">Dashboard</h2>
+<body>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/user.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("viewUsers", "Admin")" class="btn btn-primary">View Users</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/engine.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("viewParts", "Admin")" class="btn btn-primary">View Parts</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/order.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("viewOrders", "Admin")" class="btn btn-primary">View Orders</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="col-sm-6">
+        <div class="shadow p-3 mb-5 bg-white rounded">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="~/images/add.png" alt="Card image cap" class="img-thumbnail">
+                    <br><br>
+                    <div class="col text-center">
+                        <a href="@Url.Action("AddPart", "Admin")" class="btn btn-primary">Add Items</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>

@@ -1,0 +1,59 @@
+﻿@model JustAutoPartsProject.Models.Order
+
+@{
+    ViewBag.Title = "CheckOuts";
+}
+
+<h2>CheckOuts</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayName("Quantity")
+            </th>
+            <th>
+                @Html.DisplayName("Category")
+            </th>
+            <th>
+                @Html.DisplayName("Name")
+            </th>
+            <th>
+                @Html.DisplayName("Description")
+            </th>
+            <th>
+                @Html.DisplayName("Price")
+            </th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.part.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.part.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.part.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.part.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.part.Price)
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+<div class="col text-center">
+    <a href="@Url.Action("MyBill", "Order", new { order = Model })" class="btn btn-primary"> Pay </a>
+</div>
+

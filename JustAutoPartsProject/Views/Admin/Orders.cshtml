@@ -1,0 +1,29 @@
+﻿@model IEnumerable<JustAutoPartsProject.Models.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2>Orders</h2>
+
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "updatePart", new { id = item.OrderID }) |
+                @Html.ActionLink("Details", "GetDetails", new { id = item.OrderID }) |
+                @Html.ActionLink("Delete", "deletePart", new { id = item.OrderID })
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Back to Dashboard", "Dashboard")
+</div>
+

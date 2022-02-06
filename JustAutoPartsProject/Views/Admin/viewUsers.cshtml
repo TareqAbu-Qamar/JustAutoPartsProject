@@ -1,0 +1,49 @@
+﻿@model IEnumerable<JustAutoPartsProject.Models.User>
+
+@{
+    ViewBag.Title = "viewUsers";
+}
+<h2 style="margin-top:40px">View Users</h2>
+
+<br />
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.Role)
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="col text-center">
+    <a href="@Url.Action("Dashboard", "Admin", new { order = Model })" class="btn btn-primary"> Back to Dashboard </a>
+</div>

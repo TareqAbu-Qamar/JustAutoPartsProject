@@ -1,0 +1,62 @@
+﻿@model IEnumerable<JustAutoPartsProject.Models.Order>
+
+@{
+    ViewBag.Title = "viewOrders";
+}
+<h2 style="margin-top:40px; margin-bottom:40px">View Orders</h2>
+<p>
+</p>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.BillID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.BillDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.part.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.part.Description)
+        </th>
+        <th> </th>
+    </tr>
+
+    @foreach (var order in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelOrder => order.Bill.BillID)
+            </td>
+            <td>
+                @Convert.ToString(string.Format("{0:dd/MMM/yyyy hh:mm tt}", order.Bill.BillDate))
+            </td>
+            <td>
+                @Html.DisplayFor(modelOrder => order.Bill.Value)JD
+            </td>
+            <td>
+                @Html.DisplayFor(modelOrder => order.Bill.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelOrder => order.part.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelOrder => order.part.Description)
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="col text-center">
+    <a href="@Url.Action("Dashboard", "Admin", new { order = Model })" class="btn btn-primary"> Back to Dashboard </a>
+</div>
+

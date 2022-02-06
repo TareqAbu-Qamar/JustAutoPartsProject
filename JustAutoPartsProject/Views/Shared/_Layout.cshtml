@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Just Auto Parts</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980B9">
+
+        <div class="container">
+            <div class="navbar-header" style="color:gold">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Just Auto Parts", "Dashboard", "Home", new { area = ""}, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @if (User.Identity.IsAuthenticated && System.Web.HttpContext.Current.Session["Id"] != null)
+                    {
+                        if (System.Web.HttpContext.Current.Session["Role"] != null && Session["Role"].ToString().Equals("Admin"))
+                        {
+                            <div class="navbar navbar-inverse navbar-fixed-top">
+                                <div class="container">
+                                    <div class="navbar-header pull-left">
+                                        @Html.ActionLink("Just Auto Parts", "Dashboard", "Admin", new { area = "" }, new { @class = "navbar-brand" })
+                                    </div>
+                                    <div class="navbar-header pull-right">
+
+                                        <a class="btn navbar-btn pull-right" style="margin-right: 5px;" href="#" data-toggle="dropdown"><img src="~/images/cc.png" class="roundedcorners" width="30" height="30" /><b class="caret"></b></a>
+                                        <ul class="dropdown-menu realign">
+
+                                            <li>@Html.ActionLink("Manage Account", "manageAccount", "Account")</li>
+                                            <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                                        </ul>
+                                        <button class="navbar-toggle" type="button" data-target="#MainMenu" data-toggle="collapse">
+                                            <span class="glyphicon glyphicon-th-list"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2980B9">
+                                <div class="container">
+                                    <div class="navbar-header pull-left">
+                                        @Html.ActionLink("Just Auto Parts", "Dashboard", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                                    </div>
+
+                                    <div class="navbar-header pull-right">
+                                        <a class="btn navbar-btn pull-right" style="margin-right: 5px;" href="#" data-toggle="dropdown"><img src="~/images/cc.png" class="roundedcorners" width="30" height="30" /><b class="caret"></b></a>
+                                        <ul class="dropdown-menu realign">
+
+                                            <li>@Html.ActionLink("Manage Account", "manageAccount", "Account")</li>
+                                            <li>@Html.ActionLink("Logout", "Logout", "Home")</li>
+                                        </ul>
+                                        <button class="navbar-toggle" type="button" data-target="#MainMenu" data-toggle="collapse">
+                                            <span class="glyphicon glyphicon-th-list"></span>
+                                        </button>
+                                    </div>
+
+                                    <div class="navbar-header pull-right">
+                                        <a class="btn navbar-btn pull-right" style="margin-right: 5px;" href="#" data-toggle="dropdown"><img src="~/images/shopping-cart.png" class="roundedcorners" width="30" height="30" /><b class="caret"></b></a>
+                                        <ul class="dropdown-menu realign">
+
+                                            <li>@Html.ActionLink("Bill", "MyBill", "Order")</li>
+                                            <li>@Html.ActionLink("CheckOuts", "CheckOuts", "Order")</li>
+                                            <li>@Html.ActionLink("Balance", "checkBalance", "Account")</li>
+                                        </ul>
+                                        <button class="navbar-toggle" type="button" data-target="#MainMenu" data-toggle="collapse">
+                                            <span class="glyphicon glyphicon-th-list"></span>
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                    }
+                    <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - Just Auto Parts </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

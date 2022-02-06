@@ -1,0 +1,88 @@
+﻿@model JustAutoPartsProject.Models.Part
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<h2>Store</h2>
+
+<body>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/engine.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("engine", "Home")" class="btn btn-primary">Engine </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/filters.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("Filter", "Home")" class="btn btn-primary">Filter </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/body.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("body", "Home")" class="btn btn-primary">Body </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/brake.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("Brake", "Home")" class="btn btn-primary">Brakes </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img src="~/images/EXHAUST.png" alt="Card image cap" class="img-thumbnail">
+                        <br><br>
+                        <div class="col text-center">
+                            <a href="@Url.Action("Exhaust", "Home")" class="btn btn-primary">Exhaust </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <div class="col text-center">
+        <a href="@Url.Action("Dashboard","Home") " class="btn btn-primary"> Exit</a>
+    </div>
+</footer>
