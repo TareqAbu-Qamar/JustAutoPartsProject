@@ -137,7 +137,7 @@ namespace JustAutoPartsProject.Controllers
                 {
                     if (DB.Parts.Count() > 0)
                     {
-                        var query = (from x in DB.Parts where x.Category == "Tyre" select x);
+                        var query = (from x in DB.Parts where x.Category == "tyre" select x);
                         return View(query);
                     }
                 }

@@ -152,6 +152,7 @@ namespace JustAutoPartsProject.Controllers
                        // DB.Bills.Add(order.Bill);
                         order.Items = part.Name;
                         user.pay(order.Bill.Value);
+                        user.Balance -= order.Bill.Value;
                        // DB.SaveChanges();
 
                         CHorder.Bill = order.Bill;

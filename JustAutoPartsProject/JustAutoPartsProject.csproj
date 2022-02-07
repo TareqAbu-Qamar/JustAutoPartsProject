@@ -286,7 +286,6 @@
     <Content Include="Views\Order\MyBill.cshtml" />
     <Content Include="Views\Order\CheckOuts.cshtml" />
     <Content Include="Views\Admin\AddPart.cshtml" />
-    <Content Include="Views\Admin\updatePart.cshtml" />
     <Content Include="Views\Admin\viewUsers.cshtml" />
     <Content Include="Views\Admin\viewParts.cshtml" />
     <Content Include="Views\Admin\viewOrders.cshtml" />
@@ -304,6 +303,7 @@
     <Content Include="Views\Order\addToCart.cshtml" />
     <Content Include="Views\Order\PlaceOrder.cshtml" />
     <Content Include="Views\Home\Tyre.cshtml" />
+    <Content Include="Views\Admin\updatePart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
