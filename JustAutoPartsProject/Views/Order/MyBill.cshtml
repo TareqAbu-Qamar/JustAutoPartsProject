@@ -49,47 +49,54 @@
         <td></td>
     </tr>
 </table>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill.BillDate)
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.Bill.Value)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Bill.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Bill.BillDate)
+        </td>
+        <td></td>
+    </tr>
+</table>
 <div>
-    <dt>
-        @Html.DisplayNameFor(model => model.Bill.Value)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Bill.Value)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Bill.Status)
-    </dt>
-    <dd>
-        @Html.DisplayFor(model => model.Bill.Status)
-    </dd>
-    <dt>
-        @Html.DisplayNameFor(model => model.Bill.BillDate)
-    </dt>
-    <dd>
-        @Convert.ToString(string.Format("{0:dd/MMM/yyyy}", DateTime.Now))
-    </dd>
-
-    @{ JustAutoPartsProject.Models.modelContext DB = new JustAutoPartsProject.Models.modelContext();
-        int id = (int)Session["Id"];
-        var user = DB.Users.SingleOrDefault(x => x.UserID.Equals(id)); }
-    <dt>
-        @Html.DisplayName("UserName : ")
-    </dt>
-    <dd>
-        @Html.DisplayName(@user.UserName)
-    </dd>
-    <dt>
-        @Html.DisplayName("Address : ")
-    </dt>
-    <dd>
-        @Html.DisplayName(@user.Address)
-    </dd>
-    <dt>
-        @Html.DisplayName("Phone Number : ")
-    </dt>
-    <dd>
-        @Html.DisplayName(@user.PhoneNum)
-    </dd>
+@{ JustAutoPartsProject.Models.modelContext DB = new JustAutoPartsProject.Models.modelContext();
+    int id = (int)Session["Id"];
+    var user = DB.Users.SingleOrDefault(x => x.UserID.Equals(id)); }
+<dt>
+    @Html.DisplayName("UserName : ")
+</dt>
+<dd>
+    @Html.DisplayName(@user.UserName)
+</dd>
+<dt>
+    @Html.DisplayName("Address : ")
+</dt>
+<dd>
+    @Html.DisplayName(@user.Address)
+</dd>
+<dt>
+    @Html.DisplayName("Phone Number : ")
+</dt>
+<dd>
+    @Html.DisplayName(@user.PhoneNum)
+</dd>
 </div>
 <br>
 <div class="col text-center">
